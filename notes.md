@@ -1,6 +1,6 @@
-# README: Card Account Service
+# NOTES: Card Account Service
 
-Welcome to the Card Account Service, a micro-service that manages credit cards and accounts. This service provides CRUD operations for cards and accounts, allowing clients to create, retrieve, update, and delete their cards and accounts through RESTful APIs.
+The Card Account Service, a micro-service that manages credit cards and accounts. This service provides CRUD operations for cards and accounts, allowing clients to create, retrieve, update, and delete their cards and accounts through RESTful APIs.
 
 ## Technologies Used
 
@@ -85,7 +85,11 @@ The relationship between Card and Account is established using the `@ManyToOne` 
 
 ## Mock Data
 
-The application uses mock data for testing purposes has five different account IDs five different client IDs are available in the system `MockDataInitializer`.
+The application uses a `MockDataInitializer` class to populate the database with mock data for testing purposes. This class implements the `CommandLineRunner` interface, ensuring that its `run` method is executed on application startup. The `run` method creates mock accounts and cards and saves them to the database.
+
+### MockDataInitializer Class
+
+The `MockDataInitializer` class is located in the `com.sitemapdev.cardaccountservice.config` package. It is responsible for initializing mock data, including five different account IDs and five different client IDs. 
 
 ## Running Tests
 
@@ -114,6 +118,36 @@ The `CardServiceImplTest` class tests the functionality of the `CardServiceImpl`
 #### Containerization
 
 Docker is used to containerize the application. The Dockerfile defines the steps to create a container, making it easy to deploy the service in various environments.
+
+## Running the Docker Image
+
+To run the application using Docker, follow these steps:
+
+1. **Build the Docker Image:**
+
+   Open a terminal, navigate to the project directory containing your Dockerfile, and run:
+
+   
+   `docker build -t card-account-service .`
+   Replace `card-account-service` with the desired name for your Docker image.
+
+
+2. **Run the Docker Container:**
+
+   Once the image is built, start a container using:
+   `docker run -p 8080:8080 card-account-service`
+   This command maps port 8080 from the container to port 8080 on your host 
+
+3. **Access the Application:**
+
+    Open a web browser and navigate to http://localhost:8080 to interact with the running Spring Boot application.
+
+4. **Stopping the Container:**
+
+    When you're done, stop the container using:
+    `docker stop container-id`
+    Replace `container-id` with the actual ID or name of the running container. You can find the container ID by running `docker ps`
+
 
 #### Database
 
