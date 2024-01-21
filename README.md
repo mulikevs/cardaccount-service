@@ -119,6 +119,36 @@ The `CardServiceImplTest` class tests the functionality of the `CardServiceImpl`
 
 Docker is used to containerize the application. The Dockerfile defines the steps to create a container, making it easy to deploy the service in various environments.
 
+## Running the Docker Image
+
+To run the application using Docker, follow these steps:
+
+1. **Build the Docker Image:**
+
+   Open a terminal, navigate to the project directory containing your Dockerfile, and run:
+
+   
+   `docker build -t card-account-service .`
+   Replace `card-account-service` with the desired name for your Docker image.
+
+
+2. **Run the Docker Container:**
+
+   Once the image is built, start a container using:
+   `docker run -p 8080:8080 card-account-service`
+   This command maps port 8080 from the container to port 8080 on your host 
+
+3. **Access the Application:**
+
+    Open a web browser and navigate to http://localhost:8080 to interact with the running Spring Boot application.
+
+4. **Stopping the Container:**
+
+    When you're done, stop the container using:
+    `docker stop container-id`
+    Replace `container-id` with the actual ID or name of the running container. You can find the container ID by running `docker ps`
+
+
 #### Database
 
 The application supports both an in-memory H2 database and an external PostgreSQL database. Configuration properties in `application.properties` allow switching between these options.
