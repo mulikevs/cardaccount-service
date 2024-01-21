@@ -49,8 +49,6 @@ By default, the application runs on port 8080. If you need to change the port, f
 
 The relationship between Card and Account is established using the `@ManyToOne` annotation in the Card entity. This indicates that many Card entities can be associated with one Account entity. The `@JoinColumn` annotation specifies the column used for joining the two entities.
 
-## Data Models
-
 ### Card
 
   - **`@ManyToOne`:**
