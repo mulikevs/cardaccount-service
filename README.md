@@ -85,7 +85,11 @@ The relationship between Card and Account is established using the `@ManyToOne` 
 
 ## Mock Data
 
-The application uses mock data for testing purposes. five different account IDs five different client IDs are available in the system.
+The application uses a `MockDataInitializer` class to populate the database with mock data for testing purposes. This class implements the `CommandLineRunner` interface, ensuring that its `run` method is executed on application startup. The `run` method creates mock accounts and cards and saves them to the database.
+
+### MockDataInitializer Class
+
+The `MockDataInitializer` class is located in the `com.sitemapdev.cardaccountservice.config` package. It is responsible for initializing mock data, including five different account IDs and five different client IDs. 
 
 ## Running Tests
 
