@@ -1,5 +1,6 @@
 # README: Card Account Service
 
+
 The Card Account Service, a micro-service that manages credit cards and accounts. This service provides CRUD operations for cards and accounts, allowing clients to create, retrieve, update, and delete their cards and accounts through RESTful APIs.
 
 ## Technologies Used
